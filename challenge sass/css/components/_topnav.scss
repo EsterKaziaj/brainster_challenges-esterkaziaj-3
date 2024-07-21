@@ -1,0 +1,46 @@
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/variables" as var;
+
+
+
+.topnav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100vh;
+    background-color: $background-color;
+    @include flex-center(column, flex-start, flex-start);
+    padding: $padding;
+  }
+  
+  .logo {
+    width: 80%;
+    margin-bottom: 50px;
+    top: 50px;
+  }
+  
+  .topnav .icon {
+    display: none;
+  }
+  
+  .topnav a {
+    @include flex-center(row, center, space-between);
+    padding: $padding;
+    text-decoration: none;
+    color: $text-color;
+    @include transition(background-color, 0.3s, ease);
+  
+    &:hover {
+      background-color: $hover-background-color;
+    }
+  
+    i {
+      margin-left: 10px;
+    }
+  }
+  
+  .footer {
+    margin-top: $footer-margin-top;
+  }
+  

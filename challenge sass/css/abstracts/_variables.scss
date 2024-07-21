@@ -1,0 +1,17 @@
+@use "sass:math";
+
+// Variables
+$background-color: #ebeef4;
+$text-color: #5c5959;
+$hover-background-color: rgba(201, 210, 227, 0.5);
+$border-color: black;
+$padding: 10px;
+$transition-duration: 0.5s;
+$font-family: "Roboto", sans-serif;
+$footer-margin-top: 100px;
+$image-width: 100%;
+$image-height: auto;
+$grid-gap: 0px;
+$margin: 0;
+$box-sizing-margin: 2px;
+$main-image-opacity: 0;

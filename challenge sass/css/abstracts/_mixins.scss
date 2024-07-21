@@ -1,0 +1,21 @@
+@use "./variables" as var;
+@use 'sass:math';
+// Mixins
+@mixin flex-center($direction, $align-items, $justify-content) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align-items;
+    justify-content: $justify-content;
+  }
+  
+  @mixin transition($property, $duration, $timing) {
+    transition: $property $duration $timing;
+  }
+  
+  @mixin image-style {
+    display: block;
+    width: $image-width;
+    height: $image-height;
+    @include transition(opacity, $transition-duration, ease-in-out);
+  }
+ 
