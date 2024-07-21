@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade</title>
+    <link rel="stylesheet" href="exercise2.css"><!--I have used both css and script styling for this exercise -->
+    
+</head>
+<body>
+    <!--overlay div for prompting the user to enter their grade-->
+    <div class="overlay" id="overlay">
+        <!--prompt-box inside the overlay for the input field and submit button-->
+        <div class="prompt-box">
+            <label for="grade-input">Please enter your grade points:</label>
+            <br>
+            <input type="number" id="grade-input">
+            <br>
+            <button onclick="submitGrade()">Submit</button>
+        </div>
+    </div>
+    <!--container div for displaying the result after the user submits their grade.-->
+    <div class="container" id="result-container"></div>
+    <script>
+
+        //grades array: Stores the grade ranges, corresponding letter grades, and colors.
+        const grades = [
+            { min: 90, max: 100, grade: "A", color: "green" },
+            { min: 80, max: 89, grade: "B", color: "blue" },
+            { min: 70, max: 79, grade: "C", color: "yellow" },
+            { min: 60, max: 69, grade: "D", color: "orange" },
+            { min: 0, max: 59, grade: "F", color: "red" }
+        ];
+
+        //submitGrade function: Triggered when user clicks submit
+        const submitGrade = () => {
+            const grade = parseFloat(document.getElementById('grade-input').value);
+            document.getElementById('overlay').style.display = 'none';
+            displayGrade(grade);
+        };
+
+        //displayGrade function: Determines the letter grade and displays it
+        const displayGrade = grade => {
+            const resultContainer = document.getElementById('result-container');
+            resultContainer.style.display = 'block'; 
+            const h1 = document.createElement('h1');
+            for (let { min, max, grade: letter, color } of grades) {
+                if (grade >= min && grade <= max) {
+                    h1.textContent = `Your grade is ${letter}`;
+                    h1.style.color = color;
+                    break;
+                }
+            }
+            resultContainer.appendChild(h1);
+
+            const goBackButton = document.createElement('button');
+            goBackButton.textContent = "Go Back";
+            goBackButton.onclick = restart;
+            resultContainer.appendChild(goBackButton);
+        };
+
+        //restart function: Clears the result container and shows the overlay again
+        const restart = () => {
+            document.getElementById('result-container').innerHTML = ''; 
+            document.getElementById('overlay').style.display = 'flex'; 
+            document.getElementById('result-container').style.display = 'none'; 
+        };
+    </script>
+</body>
+</html>
