@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array Transformation</title>
+  <!-- Styles for the page --> 
+  <style> 
+   
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #66ceab;
+      margin: 0;
+    }
+
+    
+    .container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(203, 15, 15, 0.1);
+      text-align: center;
+    }
+
+  
+    h1 {
+      color: #dd2b2b;
+      font-weight: bolder;
+    }
+
+    
+    input {
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 10px;
+      width: 300px;
+    }
+
+   
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+   
+    button:hover {
+      background-color: #0056b3;
+    }
+
+  
+    p {
+      font-size: 18px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Array Transformation</h1>
+    
+    <input type="text" id="array-input" placeholder="Enter numbers separated by commas" value="1, 5, 10, 11, 20, 34">
+   
+    <button onclick="processArray()">Submit</button>
+  
+    <p>Transformed Array: <span id="transformed-array"></span></p>
+  </div>
+  <script>
+    // Function to transform the array
+    function transformArray(arr) {
+      return arr.map(num => {
+        if (num < 10) {
+          return num * 2; // If  nr is less than 10, * by 2
+        } else {
+          return num * 4; // If nr is 10 or more, * by 4
+        }
+      });
+    }
+
+    // Function to process the user's input and display the result
+    function processArray() {
+     
+      let input = document.getElementById('array-input').value;
+     
+      let array = input.split(',').map(Number);
+      
+      let transformedArray = transformArray(array);
+      
+      document.getElementById('transformed-array').textContent = transformedArray.join(', ');
+    }
+
+    // On page load, transform the given array and display the result
+    document.addEventListener('DOMContentLoaded', () => {
+      let array = [1, 5, 10, 11, 20, 34]; // Example but you can add your own nr 
+      let transformedArray = transformArray(array);
+    
+      document.getElementById('transformed-array').textContent = transformedArray.join(', ');
+    });
+  </script>
+</body>
+</html>

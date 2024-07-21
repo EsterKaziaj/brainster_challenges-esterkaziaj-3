@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Checker</title>
+    <style>
+        /* Basic styling for the page */
+        body {
+            font-family: cursive;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #d15e5e;
+            margin: 0;
+        }
+        
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        #passwordInput {
+            padding: 10px;
+            margin: 10px 0;
+            width: 80%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+      
+        #password {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+       
+        #message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Password Checker</h1>
+       
+        <input type="password" id="passwordInput" placeholder="Enter your password">
+       
+        <div id="password"></div>
+      
+        <p id="message"></p>
+    </div>
+    <script>
+        // Get elements from the DOM
+        const passwordInput = document.getElementById('passwordInput');
+        const passwordDisplay = document.getElementById('password');
+        const messageDisplay = document.getElementById('message');
+
+        // Event listener for the password input field
+        passwordInput.addEventListener('input', () => {
+            const password = passwordInput.value;
+            
+            passwordDisplay.textContent = `Password: ${password}`;
+            
+            // Initialize the message variable
+            let message = '';
+            // Validate the password
+            if (password.length < 8) {
+                message = 'Password must be at least 8 characters long.';
+            } else if (!/\d/.test(password)) {
+                message = 'Password must contain at least one number.';
+            } else if (!/[A-Z]/.test(password)) {
+                message = 'Password must contain at least one uppercase letter.';
+            } else {
+                message = 'Your password is valid!';
+                messageDisplay.style.color = 'green';
+            }
+            
+            // Display the validation message
+            messageDisplay.textContent = message;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table Generator</title>
+    <style>
+        /*styling for the page*/
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #66d029;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #aeec9b;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dynamic Table Generator</h1>
+    <!--when clicking on the button the prompts show-->
+    <button onclick="startTableGeneration()">Generate Table</button>
+    <div id="tableContainer"></div>
+
+    <script>
+        // Function to start the table generation 
+        function startTableGeneration() {
+            // asks for number of rows
+            let nrRows = prompt("Please enter the number of rows:");
+
+            // Validate the input for rows
+            if (nrRows === null || nrRows.trim() === "" || isNaN(nrRows) || nrRows <= 0) {
+                alert("Please enter a valid number of rows.");
+                return;
+            }
+
+            // asks for  number of columns
+            let nrColumns = prompt("Please enter the number of columns:");
+
+            // Validate the input for columns
+            if (nrColumns === null || nrColumns.trim() === "" || isNaN(nrColumns) || nrColumns <= 0) {
+                alert("Please enter a valid number of columns.");
+                return;
+            }
+
+            // Parse the  values to integers
+            nrRows = parseInt(nrRows);
+            nrColumns = parseInt(nrColumns);
+
+            // Call the function->>> generate the table
+            generateTable(nrRows, nrColumns);
+        }
+
+        // Function that generates the table from as many rows and columns user wants
+        function generateTable(nrRows, nrColumns) {
+        
+            const tableContainer = document.getElementById('tableContainer');
+
+          
+            tableContainer.innerHTML = '';
+
+            
+            const table = document.createElement('table');
+            table.setAttribute('border', '1');
+
+            
+            for (let i = 0; i < nrRows; i++) {
+            
+                const tr = document.createElement('tr');
+
+                for (let j = 0; j < nrColumns; j++) {
+                    let cell;
+
+                    // Create a header cell for the first row
+                    //or create a data cell
+                    if (i === 0) {
+                        cell = document.createElement('th');
+                        cell.innerText = `Header ${j + 1}`;
+                    } else {
+                        cell = document.createElement('td');
+                        cell.innerText = `Row ${i}, Col ${j + 1}`;
+                    }
+
+                    // Append the cell ->>>> current row
+                    tr.appendChild(cell);
+                }
+
+                // Append the current row ->>>> table
+                table.appendChild(tr);
+            }
+
+            // Append the table to the table container
+            tableContainer.appendChild(table);
+        }
+    </script>
+</body>
+</html>
