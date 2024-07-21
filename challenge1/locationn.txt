@@ -1,0 +1,37 @@
+<!--location.html    found in the nav bar,linked to the main page index.html-->
+
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Back to Homepage Link-->
+    <a href="index.html">&#8592;Back to Homepage</a>
+
+<!--Section One: Title, Address, Opening Hours & Google Map-->
+    <center>
+<h1> Location </h1>
+   <h3> Adress</h3>
+   <p> <i> Dervish Hima Street 110 , Tirana city Albania </i></p><!--in italics: defines a part of text (here it is an adress)-->
+   <p> <b> Hours of operation: </b> Monday-Sunday, 9AM-10PM</p> <br> <!--in bold to  highlight text-->
+
+<!--the location is added from google maps as an iframe -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.5157270385303!2d19.82234887553043!3d41.31939760021057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1350311e83884489%3A0x221ad89560544f0b!2sRruga%20Dervish%20Hima%2C%20Tirana%2C%20Albania!5e0!3m2!1sen!2s!4v1712014240373!5m2!1sen!2s" width="600" height="450" style="border: 2px solid blue;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <br>
+    
+     <!-- Footer Section  instagram link and copyright -->
+    <footer>
+        <p> Follow us on <a href="https://www.instagram.com/">Instagram</a>!</p>
+        <p>&copy; 2024 The Urban Garden Restaurant.All rights reserved.</p>
+   
+    </footer>
+
+</center>
+</body>
+</html>

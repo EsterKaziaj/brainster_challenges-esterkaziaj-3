@@ -1,0 +1,20 @@
+<!--error page linked to the main page index.html>
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error 404</title>
+</head>
+<body>
+<a href="index.html">&#8592;Back to Homepage</a>
+    <center>
+    <h1> Error 404-Page not found</h1>
+    <p> We're sorry but the page you are looking for could not be found.  </p>
+<!--Back to Homepage Link-->
+</center>
+</body>
+</html>

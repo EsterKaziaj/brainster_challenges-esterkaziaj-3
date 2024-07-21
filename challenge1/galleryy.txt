@@ -1,0 +1,79 @@
+<!--Gallery found in the nav bar, linked to the main page-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+</head>
+<body>
+    <!--Back to Homepage Link-->
+    <a href="index.html">&#8592;Back to Homepage</a>
+
+    <!--Section One: Title, Description &Gallery of pics that when you click on them it opens directly as it is linked 
+    all this so the costumer can view our gallery pics more detailed -->
+    <center><!--for more style for the page-->
+    <h1>Gallery</h1>
+    <p>Showcase of our dishes,products and the interior of our establishment. </p>
+
+   <!--I have used a table to store all the pictures -->
+    <table>
+        <tr>
+            <td>
+                <a href="img10.jpg">
+                    <img src="img10.jpg" alt="Image 10" width="300" height="300">
+                </a>
+            </td>
+            <td>
+                <a href="img9.jpg">
+                    <img src="img9.jpg" alt="Image 9" width="300" height="300">
+                </a>
+            </td>
+            <td>
+                <a href="img7.jpg">
+                    <img src="img7.jpg" alt="Image 7" width="300" height="300">
+                </a>
+            </td>
+            <td>
+                <a href="img7.jpg">
+                    <img src="img7.jpg" alt="Image 7" width="300" height="300">
+                </a>
+            </td>
+            </tr>
+
+            <tr>
+            <td>
+                <a href="img6.jpg">
+                    <img src="img6.jpg" alt="Image 6" width="300" height="300">
+                </a>
+            </td>
+            <td>
+                <a href="img5.jpg">
+                    <img src="img5.jpg" alt="Image 5" width="300" height="300">
+                </a>
+            </td>
+            <td>
+                <a href="img3.jpg">
+                    <img src="img3.jpg" alt="Image 3" width="300" height="300">
+                </a>
+            </td>
+            <td>
+                <a href="img2.jpg">
+                    <img src="img2.jpg" alt="Image 2" width="300" height="300">
+                </a>
+            </td>
+            </tr>
+    
+    </table>
+ <!-- Footer Section  instagram link and copyright -->
+ <footer>
+ 
+    <p> Follow us on <a href="https://www.instagram.com/">Instagram</a>!</p>
+    <p>&copy; 2024 The Urban Garden Restaurant. All rights reserved. </p>
+ </footer>
+</center>
+</body>
+</html>

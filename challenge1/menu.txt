@@ -1,0 +1,108 @@
+<!--Menu.html  found in nav bar, connected to the main page index.html-->
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu of The Urban Garden Restaurant</title>
+    
+</head>
+<body>
+    <!--Back to Homepage Link-->
+    <a href="index.html">&#8592;Back to Homepage</a>
+
+    <!--Section One: Title, Description & Menu-->
+    <center><!--for more style for the page-->
+    <h1>Menu</h1>
+    <p>Explore our selection of delicious dishes and premium plates crafted with care and quality ingredients. </p>
+   
+   
+   <!--creating the table of the menu-->
+    <table border="1" cellpadding="10px">
+<tr> 
+    <th> Category</th>
+    <th> Item</th>
+    <th> Description </th>
+    <th> Price</th>
+</tr>
+
+<tr> 
+    <td> Appetizers</td>
+    <td> Bruschetta</td>
+    <td> Grilled bread garlic,tomatoes, olive oil.</td>
+    <td> $8.00</td>
+</tr>
+<tr>
+    <td> Appetizers</td>
+    <td> Caprese Salad</td>
+    <td> Fresh mozzarella,tomatoes,basil, balsamic glaze.</td>
+    <td> $10.00</td>
+</tr>
+<tr>
+    <td> Appetizers</td>
+    <td> Stuffed mushrooms</td>
+    <td> Baked mushrooms filled with cheese,garlic and herbs.</td>
+    <td> $9.00</td>
+</tr>
+<tr>
+    <td> Main courses</td>
+    <td> Margherita Pizza </td>
+    <td> San Marzano tomatoes, mozzarella cheese,fresh basil,salt and extra virgin olive oil.</td>
+    <td> $15.00</td>
+</tr>
+<tr>
+    <td> Main courses</td>
+    <td> Quinoa Salad</td>
+    <td> Quinoa,avocado,cherry tomatoes,cucumber and feta cheese with dressing. </td>
+    <td> $12.00</td>
+</tr>
+<tr>
+    <td> Main courses</td>
+    <td> Grilled Salmon</td>
+    <td> Grilled salmon fillet with a side of steamed vegetables and lemon herb sauce. </td>
+    <td> $18.00</td>
+</tr>
+<tr>
+    <td> Desserts</td>
+    <td> Tiramisu</td>
+    <td> Classic Italian dessert made with ladyfingers,coffe,mascarpone and cocoa. </td>
+    <td> $7.00</td>
+</tr>
+<tr>
+    <td> Desserts</td>
+    <td> Chocolate Lava Cate</td>
+    <td>  warm chocolate cake with a gooey center,served with vanilla ice cream.</td>
+    <td> $8.00</td>
+</tr>
+<tr>
+    <td> Beverages</td>
+    <td> House Red Wine </td>
+    <td> Glass of our finest red wine selection from Albania. </td>
+    <td> $9.00</td>
+</tr>
+<tr>
+    <td> Beverages</td>
+    <td> Fresh Lemonade </td>
+    <td> Homemade lemonade with freshly squeezed lemons and a touch of mint. </td>
+    <td> $4.00</td>
+</tr>
+<tr>
+<td>Beverages</td>
+<td> Espresso</td>
+<td> Strong and richly flavored espresso coffe.</td>
+<td>$3.00</td>
+</tr>
+
+    </table><br><br>
+
+    <!-- Footer Section  instagram link and copyright -->
+<footer>
+  
+    <p> Follow us on <a href="https://www.instagram.com/">Instagram</a>!</p>
+    <p>&copy; 2024 The Urban Garden Restaurant. All rights reserved. </p>
+</center>
+</footer>
+</body>
+</html>
