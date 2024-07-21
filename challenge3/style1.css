@@ -1,0 +1,221 @@
+/*general css info*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  margin-top: 5px;
+  font-size: 25px;
+}
+
+p {
+  font-size: 17px;
+}
+
+/* Section One: Banner */
+
+.banner {
+  position: relative;
+  height: 100%;
+  background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1)),
+    url("./src/img/img1.jpg") center/cover no-repeat fixed;
+}
+/*banner content stands for section title and little description*/
+.banner-content {
+  position: absolute;
+  bottom: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 500%;
+  font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
+  z-index: 1;
+  text-align: center;
+}
+
+/*styling for buttons : Explore classes; Send message*/
+.button {
+  background-color: rgb(216, 62, 85);
+  color: white;
+  display: inline-block;
+  align-content: center;
+  padding: 10px 50px;
+  border: 1px solid rgb(216, 62, 85);
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+/*button hover makes the button change color when cursor is on top of it*/
+button:hover {
+  background-color: #c43333;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+/*Section 2 of the page : About*/
+.about {
+  background-color: white;
+  padding: 50px 175px;
+}
+
+/*section 3: Classes (that you can take from us)*/
+.classes {
+  background-color: #dfd9d9;
+  padding: 50px 175px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  /* Allow cards to wrap to the next line */
+}
+
+.classes-card {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid rgb(205, 201, 201);
+  border-radius: 0px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  vertical-align: top;
+  width: 500px;
+  max-width: 500px;
+  height: 350px;
+  text-align: left;
+  justify-content: space-between;
+  padding: 2%;
+}
+
+.classes-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+/*on top of the card specified at the image*/
+.discount {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: white;
+  color: rgb(221, 55, 55);
+  padding: 7px;
+}
+
+/*Section 4: Schedule*/
+.schedule {
+  background-attachment: fixed;
+  background-color: white;
+  padding: 50px 175px;
+}
+
+/*table styling*/
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+tr {
+  border-bottom: 1px solid rgb(190, 183, 183);
+}
+
+td {
+  text-align: left;
+  padding: 8px;
+}
+th {
+  text-align: left;
+  padding: 8px;
+  font-weight: bolder;
+}
+
+/*Section 5: Contact*/
+.background {
+  background-color: #dfd9d9;
+  margin-bottom: 20px;
+}
+.contact {
+  padding: 50px 175px;
+  display: flex;
+  flex-direction: column; /* Stack child elements vertically */
+  justify-content: center; /* Horizontally center the child elements */
+  align-items: center;
+  margin-bottom: 20px;
+}
+.contact-text {
+  padding: 50px 5px 10px 175px;
+}
+/*form styling*/
+.contact-form {
+  padding: 20px;
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-position: 50%;
+  width: 50%;
+  text-align: left; /* Align content inside form to the left */
+}
+
+.contact-form div {
+  margin-bottom: 10px; /* Adds space after each input field */
+}
+
+.contact-form label {
+  display: block; /* Makes label take full width of parent */
+  margin-bottom: 1px; /* Adds space below each label */
+  color: #fff;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 1px; /* Adds space above each input field */
+  border: 1px solid #ccc;
+  border-radius: 0px;
+}
+
+/* Hover effect for input fields */
+.contact-form input[type="text"]:hover,
+.contact-form input[type="email"]:hover,
+.contact-form textarea:hover {
+  border-color: red; /* Changes border color to red on hover */
+}
+
+/* Section Six: Footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(216, 62, 85);
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  z-index: 2;
+}
