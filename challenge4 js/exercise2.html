@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue Implementation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #d7ebe6;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .input-section, .result-section {
+            margin: 10px 0;
+        }
+        .input-section input {
+            padding: 5px;
+            font-size: 16px;
+            margin: 5px;
+        }
+        .input-section button {
+            padding: 5px 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: lightpink;
+        }
+        .result-section p {
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Queue Implementation</h2>
+        <div class="input-section">
+            <input type="text" id="itemInput" placeholder="Enter item">
+            <button onclick="enqueueItem()">Enqueue</button>
+            <button onclick="dequeueItem()">Dequeue</button>
+        </div>
+        <div class="result-section">
+            <p id="queueDisplay">Queue: []</p>
+        </div>
+    </div>
+
+    <script>
+        /*queue:  array that acts as the queue*/
+        let queue = [];
+
+        /*enqueue(item): adds an item to the end of the queue using push()  */
+        function enqueue(item) {
+            queue.push(item);
+            displayQueue();
+        }
+
+        /*dequeue(): removes the first item from the queue using shift(). 
+        If the queue is empty, an alert is shown.*/
+        function dequeue() {
+            if (queue.length === 0) {
+                alert("Queue is empty");
+            } else {
+                queue.shift();
+                displayQueue();
+            }
+        }
+
+        /*displayQueue(): Updates the displayed state of the queue on the webpagew*/
+        function displayQueue() {
+            document.getElementById('queueDisplay').innerText = 'Queue: ' + JSON.stringify(queue);
+        }
+
+        /*enqueueItem(): Reads the value from the input field, enqueues it if not empty, and clears the input field */
+        function enqueueItem() {
+            let itemInput = document.getElementById('itemInput').value;
+            if (itemInput.trim() === '') {
+                alert("Please enter an item");
+            } else {
+                enqueue(itemInput);
+                document.getElementById('itemInput').value = '';
+            }
+        }
+
+        /*dequeueItem(): Calls the dequeue function to remove the first item from the queue */
+        function dequeueItem() {
+            dequeue();
+        }
+    </script>
+</body>
+</html>

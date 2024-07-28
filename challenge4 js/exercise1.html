@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chunk Array Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #b1d4e6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .input-section, .result-section {
+            margin: 10px 0;
+        }
+        .input-section input {
+            padding: 5px;
+            font-size: 16px;
+            margin: 5px;
+        }
+        .input-section button {
+            padding: 5px 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .result-section p {
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Chunk Array Example</h2>
+        <div class="input-section">
+            <label for="arrayInput">Enter an array (comma-separated):</label>
+            <input type="text" id="arrayInput" placeholder="e.g., 1,2,3,4,5">
+            <label for="chunkSizeInput">Chunk Size:</label>
+            <input type="number" id="chunkSizeInput" placeholder="e.g., 2">
+            <button onclick="displayChunks()">Chunk Array</button>
+        </div>
+        <div class="result-section">
+            <p id="result"></p>
+        </div>
+    </div>
+
+    <script>
+        // Function to chunk an array into smaller arrays of a specified size
+        function chunkArray(array, chunkSize) {
+            let result = [];
+            for (let i = 0; i < array.length; i += chunkSize) {
+                // Slice the array into chunks and add them to the result
+                let chunk = array.slice(i, i + chunkSize);
+                result.push(chunk);
+            }
+            return result;
+        }
+
+        // Function to read input values, chunk the array, and display the result
+        function displayChunks() {
+            // Get the input values from user
+            let arrayInput = document.getElementById('arrayInput').value;
+            let chunkSizeInput = document.getElementById('chunkSizeInput').value;
+            
+            // Convert the input string to an array of numbers
+            let array = arrayInput.split(',').map(Number);
+            // Parse the chunk size input to an integer
+            let chunkSize = parseInt(chunkSizeInput, 10);
+            
+            // Validate the inputs
+            if (array.length === 0 || isNaN(chunkSize) || chunkSize <= 0) {
+                document.getElementById('result').innerText = 'Please enter a valid array and chunk size.';
+                return;
+            }
+
+            // Chunk the array and display the result
+            let chunkedArray = chunkArray(array, chunkSize);
+            document.getElementById('result').innerText = 'Chunked Array: ' + JSON.stringify(chunkedArray);
+        }
+    </script>
+</body>
+</html>
+

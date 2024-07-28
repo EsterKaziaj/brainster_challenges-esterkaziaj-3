@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            font-size: 18px;
+            color: #333;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prime Number Checker</h1>
+        <input type="text" id="numbersInput" placeholder="Enter numbers separated by commas">
+        <button onclick="checkNumbers()">Check Primes</button>
+        <div class="result" id="result"></div>
+    </div>
+    <script>
+        // Function to check if a number is prime
+        function isPrime(number) {
+            if (number <= 1) {
+                return false;
+            }
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // Function to check primes from user input
+        function checkNumbers() {
+            const input = document.getElementById('numbersInput').value;
+            const numbers = input.split(',').map(Number);
+            const result = numbers.map(isPrime);
+            document.getElementById('result').textContent = result.join(', ');
+        }
+    </script>
+</body>
+</html>
