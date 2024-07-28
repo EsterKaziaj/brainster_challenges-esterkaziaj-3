@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix with Border</title>
+    <style>
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+
+        
+        #input-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #input-field {
+            width: 300px;
+            height: 50px;
+            font-size: 16px;
+            padding: 10px;
+            border: 2px solid #333;
+            border-radius: 5px;
+        }
+
+        #submit-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #matrix-container {
+            font-family: monospace;
+            display: inline-block;
+            border: 2px solid #000;
+            padding: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+        }
+
+       
+        .line {
+            color: #000;
+            background-color: #fff;
+            padding: 5px;
+            border-radius: 3px;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div id="input-container">
+        <textarea id="input-field" placeholder="Enter your text here..."></textarea><br>
+        <button id="submit-button" onclick="processInput()">Submit</button>
+    </div>
+    <div id="matrix-container"></div>
+
+    <script>
+        /**
+         * Adds a border of asterisks (*) around the given matrix.*/
+        function addBorder(picture) {
+            // Determine the length of the top/bottom border based on the first row
+            const borderLength = picture[0].length + 2;
+
+            // Create the top and bottom border of asterisks
+            const border = '*'.repeat(borderLength);
+
+            // Initialize an array to store the new matrix with borders
+            const borderedPicture = [];
+
+            //  top border
+            borderedPicture.push(border);
+
+            // Loop through each row of the original matrix
+            for (let row of picture) {
+                // Add an asterisk (*) to the beginning and end of each row
+                borderedPicture.push(`*${row}*`);
+            }
+
+            //bottom border
+            borderedPicture.push(border);
+
+            // Return the new matrix with borders
+            return borderedPicture;
+        }
+
+        /**
+         * Displays the matrix on the web page by appending elements to the DOM. */
+        function displayMatrix(matrix) {
+            // Get the container element where the matrix will be displayed
+            const container = document.getElementById('matrix-container');
+            container.innerHTML = ''; // Clear previous content
+
+            // Loop through each line 
+            for (let line of matrix) {
+                // Create a div element for each line
+                const lineElement = document.createElement('div');
+
+                // Set the class name for styling
+                lineElement.className = 'line';
+                lineElement.textContent = line;
+
+                // Append the line element
+                container.appendChild(lineElement);
+            }
+        }
+
+        /**
+         * Processes the user input, adds borders to it, and displays the result.
+         */
+        function processInput() {
+            // Get the user input from the textarea
+            const userInput = document.getElementById('input-field').value;
+
+            // Split the input into an array of strings by new lines
+            const picture = userInput.split('\n');
+
+            // Apply the addBorder function to the user input
+            const borderedPicture = addBorder(picture);
+
+            // Display the new matrix with the border on the page
+            displayMatrix(borderedPicture);
+        }
+    </script>
+</body>
+</html>
