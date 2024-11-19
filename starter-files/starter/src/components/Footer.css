@@ -1,0 +1,16 @@
+.footer {
+    padding: 20px;
+    background-color: #f1f1f1;
+    text-align: center;
+    color: red;
+  }
+  
+  .footer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer li {
+    margin: 10px 0;
+  }
+  
