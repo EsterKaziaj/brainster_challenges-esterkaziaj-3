@@ -1,38 +1,45 @@
-.App {
-  text-align: center;
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Layout for the Main Content */
+.content {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 80px; /* Space for the fixed header */
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Bike Cards Grid */
+.bike-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 20px; /* Space between cards */
+  justify-items: center;
+  flex: 1; /* Ensures it takes remaining space */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Adjustments for Mobile View */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    margin-top: 60px;
+    padding: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .filters {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .bike-list {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row for smaller screens */
+    padding-top: 25%;
+  }
+
+  .card {
+    width: 100%; /* Full width for cards on smaller screens */
   }
 }
